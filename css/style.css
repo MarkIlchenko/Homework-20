@@ -1,0 +1,256 @@
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 30%;
+    height: 300px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 70%;
+    border-left: none;
+    height: 300px;
+    border-bottom: 0px;
+}
+.card-container {
+    max-width: 600px;
+    display: flex;
+}
+.card-container .cardcontainer:nth-of-type(2) {
+    margin: 0 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cardcontainer{
+    position: relative;
+}
+
+.cardcontainer .card{
+    position: relative;
+    height: 450px;
+    width: 320px;
+    background: #232323;
+    border-radius: 8%;
+    overflow: hidden;
+}
+
+.cardcontainer .card::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #EEE3CB;
+    clip-path: circle(150px at 80% 20%);
+    transition: 0.5s ease-in-out;
+}
+
+.cardcontainer .card:hover::before{
+    clip-path: circle(300px at 80% -20%);
+}
+
+.cardcontainer .card::after{
+    content: 'Nike';
+    position: absolute;
+    top: 30%;
+    left: -20%;
+    font-size: 12em;
+    font-weight: 800;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.04);
+}
+.cardcontainer .cardnew::after{
+    content: 'Zara';
+
+}
+.cardcontainer .cardnew2::after{
+    content: 'Bershka';
+}
+
+
+.cardcontainer .card .image{
+    position: absolute;
+    top: 50%;
+    left: -13px;
+    transform: translateY(-50%) rotateY(180deg);
+    z-index: 10000;
+    width: 100%;
+    height: 200px;
+    transition: 0.5s;
+}
+
+.cardcontainer .card:hover .image{
+    top: 0%;
+    transform: translateY(0%) rotateY(180deg);
+}
+
+.cardcontainer .card .image img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(25deg);
+}
+
+.cardcontainer .card .content{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.cardcontainer .card:hover .content{
+    height: 210px;
+}
+
+.cardcontainer .card .content h2{
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.cardcontainer .card .content .size,
+.cardcontainer .card .content .color{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.cardcontainer .card:hover .content .size{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+.cardcontainer .card:hover .content .color{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.6s;
+}
+
+.cardcontainer .card .content .size h3,
+.cardcontainer .card .content .color h3{
+    color: #fff;
+    font-weight: 300;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: 10px
+}
+
+.cardcontainer .card .content .size span{
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 14px;
+    display: inline-block;
+    color: #111;
+    background:#fff;
+    margin: 0 5px;
+    transition: 0.5s;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cardcontainer .card .content .size span:hover{
+    background-color: #EEE3CB;
+}
+
+.cardcontainer .card .content .color span{
+    width: 20px;
+    height: 20px;
+    background: #ff0;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor:  pointer;
+}
+
+.cardcontainer .card .content .color span:nth-child(2){
+    background: #EEE3CB;
+}
+
+.cardcontainer .card .content .color span:nth-child(3){
+    background: #d63c49;
+}
+
+.cardcontainer .card .content .color span:nth-child(4){
+    background: #366ae8;
+}
+
+.cardcontainer .card .content a{
+    display: inline-block;
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 4px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #111;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.5s;
+}
+
+.cardcontainer .card:hover .content a{
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 0.75s;
+    background: #EEE3CB;
+}
